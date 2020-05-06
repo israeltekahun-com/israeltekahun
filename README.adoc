@@ -6,15 +6,16 @@
 :icons: font
 :source-highlighter: prettify
 
-This guide walks you through the process of creating a "`Hello, World`" RESTful web
-service with Spring.
+This guide walks you through the process of creating the syncing RESTful web service with Spring.
 
 == What You Will Build
 
 You will build a service that will accept HTTP GET requests at
+
 `http://localhost:8080/manualsync?database=${harbor database name}&collection=${harbor collection name}&file=${log file name}&ipAddress=${ip address}`.
 
 You will build a service that will accept HTTP GET requests at
+
 `http://localhost:8080/defaultsync?file=${log file name}&ipAddress=${ip address}`.
 
 
@@ -77,24 +78,3 @@ $ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ 
 ##### 2.1 Alternatively, listen to choosen collections in java instead of the whole database (not used in the implementation)
 
 https://docs.mongodb.com/manual/reference/method/db.collection.watch/index.html#db.collection.watch
-
-
-To get hot-reloading to work with Docker Machine and VirtualBox you’ll need to enable a polling mechanism via chokidar (which wraps fs.watch, fs.watchFile, and fsevents).
-
-##### Step 1: Create a new Machine
-include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
-##### Step 2: Grab the IP address
-
-
-
-```bash
-$ docker-machine ip clever
-```
-##### Step 3: Build the image
-```bash
-docker build -t marine_client_dev .
-```
-##### Step 4: Run the container
-```bash
-docker run -it -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm marine_client_dev
-```
