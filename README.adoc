@@ -1,0 +1,64 @@
+:spring_version: current
+:toc:
+:project_id: gs-rest-service
+:spring_version: current
+:spring_boot_version: 2.2.1.RELEASE
+:icons: font
+:source-highlighter: prettify
+
+This guide walks you through the process of creating a "`Hello, World`" RESTful web
+service with Spring.
+
+== What You Will Build
+
+You will build a service that will accept HTTP GET requests at
+`http://localhost:8080/manualsync?database=${harbor database name}&collection=${harbor collection name}&file=${log file name}&ipAddress=${ip address}`.
+
+You will build a service that will accept HTTP GET requests at
+`http://localhost:8080/defaultsync?file=${log file name}&ipAddress=${ip address}`.
+
+
+It will respond with a JSON representation of a response, as the following listing shows:
+
+====
+[source,json]
+----
+{"content": "finished default synking from fileName"}
+----
+====
+
+====
+[source,json]
+----
+{"content": "finished synking in db: databaseName , col:  collectionName  from  fileName}
+----
+====
+
+== What You Need
+
+:java_version: 1.8
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/how_to_complete_this_guide.adoc[]
+
+[[scratch]]
+== Starting with Spring Initializr
+
+For all Spring applications, you should start with the https://start.spring.io[Spring
+Initializr]. The Initializr offers a fast way to pull in all the dependencies you need for
+an application and does a lot of the setup for you. This example needs only the Spring Web
+dependency. The following image shows the Initializr set up for this sample project:
+
+image::images/initializr.png[]
+
+NOTE: The preceding image shows the Initializr with Maven chosen as the build tool. It also shows values of `com.example` and `rest-service` as the Group
+and Artifact, respectively. You will use those values throughout the rest of this sample.
+
+The following listing shows the `pom.xml` file that is created when you choose Maven:
+
+====
+[source,xml]
+----
+include::initial/pom.xml[]
+----
+====
