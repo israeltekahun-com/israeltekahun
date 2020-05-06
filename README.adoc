@@ -65,8 +65,8 @@ include::initial/pom.xml[]
 
 
 == Syncing
-##### 1. Create a replica set that has only one primary member. <br/> 
-https://docs.mongodb.com/manual/tutorial/deploy-replica-set/
+##### 1. Create a replica set that has only one primary member. 
+https://docs.mongodb.com/manual/tutorial/deploy-replica-set/ <br/> 
 ##### 2. Save the update logs in a file
 ```shell
 $ mongo | tee ${path}\<file name>
