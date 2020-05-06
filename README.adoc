@@ -74,7 +74,7 @@ $ mongo | tee ${path}\<file name>
 $ user:PRIMARY> watchCursor = db.getMongo().watch()
 $ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ printjson(watchCursor.next());}}
 ```
-##### Alternatively, listen to choosen collections in java instead of the whole database (not used in the implementation)
+##### 2.1 Alternatively, listen to choosen collections in java instead of the whole database (not used in the implementation)
 
 
 To get hot-reloading to work with Docker Machine and VirtualBox you’ll need to enable a polling mechanism via chokidar (which wraps fs.watch, fs.watchFile, and fsevents).
