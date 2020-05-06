@@ -65,5 +65,11 @@ include::initial/pom.xml[]
 
 
 == Syncing
-===== 1. Create a replica set to be able to log update in MongoDB database
+===== 1. Create a replica set that has only one primary member. 
 https://docs.mongodb.com/manual/tutorial/deploy-replica-set/
+===== 2. Save the update logs in a file
+```shell
+$ mongo | tee ${sökväg}\<file name>
+$ user:PRIMARY> watchCursor = db.getMongo().watch()
+$ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ printjson(watchCursor.next());}}
+```
