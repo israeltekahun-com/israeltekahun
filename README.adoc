@@ -62,3 +62,7 @@ The following listing shows the `pom.xml` file that is created when you choose M
 include::initial/pom.xml[]
 ----
 ====
+
+
+== Syncing
+===== 1. Create a replica set
