@@ -65,4 +65,5 @@ include::initial/pom.xml[]
 
 
 == Syncing
-===== 1. Create a replica set
+===== 1. Create a replica set to be able to log update in MongoDB database
+https://docs.mongodb.com/manual/tutorial/deploy-replica-set/
