@@ -81,5 +81,5 @@ $ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ 
 
 strength: Easy to modify it so that it syncs based up on all CRUD operation
 
-Weakness: No automatic rutine exists to restart MongoDB database if it crashes 
+Weakness: No automatic rutine exists to restart MongoDB database incase it crashes 
 
