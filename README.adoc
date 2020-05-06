@@ -76,6 +76,8 @@ $ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ 
 ```
 ##### 2.1 Alternatively, listen to choosen collections in java instead of the whole database (not used in the implementation)
 
+https://docs.mongodb.com/manual/reference/method/db.collection.watch/index.html#db.collection.watch
+
 
 To get hot-reloading to work with Docker Machine and VirtualBox you’ll need to enable a polling mechanism via chokidar (which wraps fs.watch, fs.watchFile, and fsevents).
 
