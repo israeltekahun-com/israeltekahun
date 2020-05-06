@@ -69,7 +69,31 @@ include::initial/pom.xml[]
 https://docs.mongodb.com/manual/tutorial/deploy-replica-set/
 ===== 2. Save the update logs in a file
 ```shell
-$ mongo | tee ${sökväg}\<file name>
+$ mongo | tee ${path}\<file name>
 $ user:PRIMARY> watchCursor = db.getMongo().watch()
 $ user:PRIMARY> while (!watchCursor.isExhausted()){ if (watchCursor.hasNext()){ printjson(watchCursor.next());}}
+```
+
+### For windows users, if problems occure
+#### Viritual Machine:
+
+To get hot-reloading to work with Docker Machine and VirtualBox you’ll need to enable a polling mechanism via chokidar (which wraps fs.watch, fs.watchFile, and fsevents).
+
+##### Step 1: Create a new Machine
+```bash
+$ docker-machine create -d virtualbox clever
+$ docker-machine env clever
+$ eval $(docker-machine env clever)
+```
+##### Step 2: Grab the IP address
+```bash
+$ docker-machine ip clever
+```
+##### Step 3: Build the image
+```bash
+docker build -t marine_client_dev .
+```
+##### Step 4: Run the container
+```bash
+docker run -it -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm marine_client_dev
 ```
