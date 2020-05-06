@@ -14,8 +14,6 @@ You will build a service that will accept HTTP GET requests at
 
 `http://localhost:8080/manualsync?database=${harbor database name}&collection=${harbor collection name}&file=${log file name}&ipAddress=${ip address}`.
 
-You will build a service that will accept HTTP GET requests at
-
 `http://localhost:8080/defaultsync?file=${log file name}&ipAddress=${ip address}`.
 
 
