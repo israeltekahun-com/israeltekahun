@@ -25,7 +25,7 @@
 .container .box .kolumner{
   display: flex;
   flex-direction: column;
-  width: 32.5%;
+  width: 24.5%;
 }
 
 .container .box .kolumner img{
